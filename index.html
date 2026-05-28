@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="ABS LOGO Png.png">
+
+  <!-- SEO -->
+  <title>106.8 ABS FM | Northern Uganda News, Culture & Live Radio</title>
+
+  <meta name="description" content="106.8 ABS FM is a leading radio station in Northern Uganda delivering trusted news, live radio, sports, culture, entertainment, and community programmes.">
+
+  <meta name="keywords" content="ABS FM, 106.8 ABS FM, Uganda radio station, Northern Uganda news, live radio Uganda, Acholi culture, sports news Uganda">
+
+  <meta name="author" content="106.8 ABS FM">
+
+  <!-- Google Search Preview -->
+  <meta property="og:title" content="106.8 ABS FM">
+  
+  <meta property="og:description" content="Trusted news, live radio, sports, culture, and community voices from Northern Uganda.">
+
+  <meta property="og:image" content="ABS LOGO Png.png">
+
+  <meta property="og:type" content="website">
+
+  <meta property="og:url" content="https://www.absfmgulucom.com">
+
+  <!-- Mobile Theme -->
+  <meta name="theme-color" content="#ff7b00">
+<link rel="icon" type="image/png" href="ABS LOGO Png.png">
+  <title>106.8 ABS FM</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#f5f5f5;
+      color:#222;
+      line-height:1.7;
+    }
+
+    header{
+      background:linear-gradient(135deg,#ff7b00,#000);
+      color:white;
+      text-align:center;
+      padding:30px 20px;
+    }
+
+    header img{
+      width:120px;
+      margin-bottom:15px;
+    }
+
+    header h1{
+      font-size:45px;
+      margin-bottom:10px;
+    }
+
+    header p{
+      font-size:18px;
+    }
+
+    nav{
+      background:#111;
+      padding:15px;
+      text-align:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin:0 15px;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#ff7b00;
+    }
+
+    /* BREAKING NEWS */
+
+    .breaking-news{
+      background:#000;
+      color:white;
+      padding:12px 0;
+      overflow:hidden;
+      white-space:nowrap;
+      border-top:3px solid #ff7b00;
+      border-bottom:3px solid #ff7b00;
+    }
+
+    .breaking-news marquee{
+      font-size:16px;
+      font-weight:bold;
+    }
+
+    .breaking-news span{
+      background:#ff7b00;
+      color:white;
+      padding:6px 12px;
+      margin-right:20px;
+      border-radius:5px;
+    }
+
+    .hero{
+      background:url('https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=1400&q=80') center/cover;
+      height:350px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:white;
+    }
+
+    .hero-content{
+      background:rgba(0,0,0,0.7);
+      padding:40px;
+      border-radius:15px;
+      max-width:700px;
+    }
+
+    .hero h2{
+      font-size:50px;
+      margin-bottom:15px;
+    }
+
+    .hero p{
+      font-size:20px;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:50px auto;
+    }
+
+    .section-title{
+      color:#ff7b00;
+      margin-bottom:30px;
+      border-left:6px solid black;
+      padding-left:15px;
+      font-size:35px;
+    }
+
+    .news-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:30px;
+    }
+
+    .news-card{
+      background:white;
+      border-radius:15px;
+      overflow:hidden;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .news-card:hover{
+      transform:translateY(-5px);
+    }
+
+    .news-card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .news-content{
+      padding:25px;
+    }
+
+    .date{
+      color:#ff7b00;
+      font-size:14px;
+      font-weight:bold;
+      margin-bottom:10px;
+    }
+
+    .news-content h3{
+      margin-bottom:15px;
+      color:#111;
+    }
+
+    .news-content p{
+      color:#555;
+      margin-bottom:20px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:10px 20px;
+      background:#ff7b00;
+      color:white;
+      text-decoration:none;
+      border:none;
+      border-radius:5px;
+      font-weight:bold;
+      transition:0.3s;
+      cursor:pointer;
+    }
+
+    .btn:hover{
+      background:black;
+    }
+
+    /* FULL STORY */
+
+    .full-story{
+      display:none;
+      margin-top:15px;
+      color:#444;
+    }
+
+    footer{
+      background:#111;
+      color:white;
+      text-align:center;
+      padding:40px 20px;
+      margin-top:50px;
+    }
+
+    footer p{
+      margin:5px 0;
+    }
+
+    /* RADIO PLAYER */
+
+    .radio-player{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      display:flex;
+      gap:10px;
+      z-index:9999;
+    }
+
+    .live-btn,
+    .stop-btn{
+      border:none;
+      padding:14px 20px;
+      border-radius:50px;
+      color:white;
+      font-weight:bold;
+      cursor:pointer;
+      box-shadow:0 4px 12px rgba(0,0,0,0.3);
+      transition:0.3s;
+    }
+
+    .live-btn{
+      background:#ff7b00;
+      animation:pulse 1.5s infinite;
+    }
+
+    .stop-btn{
+      background:#111;
+    }
+
+    .live-btn:hover,
+    .stop-btn:hover{
+      transform:scale(1.05);
+    }
+
+    @keyframes pulse{
+
+      0%{
+        box-shadow:0 0 0 0 rgba(255,123,0,0.7);
+      }
+
+      70%{
+        box-shadow:0 0 0 15px rgba(255,123,0,0);
+      }
+
+      100%{
+        box-shadow:0 0 0 0 rgba(255,123,0,0);
+      }
+
+    }
+
+    @media(max-width:768px){
+
+      .hero h2{
+        font-size:35px;
+      }
+
+      nav a{
+        display:block;
+        margin:10px 0;
+      }
+
+      .radio-player{
+        bottom:15px;
+        right:15px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+
+    <img src="ABS LOGO Png.png" alt="ABS FM Logo">
+
+    <h1>106.8 ABS FM</h1>
+
+    <p>Empowering the Community - Through Trusted News & Information</p>
+
+  </header>
+
+  <nav>
+
+    <a href="index.html">Home</a>
+
+    <a href="news.html">News</a>
+
+    <a href="index.html#programmes">Programmes</a>
+
+    <a href="index.html#culture">Culture</a>
+
+    <a href="index.html#contact">Contact</a>
+
+  </nav>
+
+  <!-- BREAKING NEWS -->
+
+  <div class="breaking-news">
+
+    <marquee behavior="scroll" direction="left">
+
+      <span>BREAKING NEWS</span>
+
+      ABS FM expands community development programming across Northern Uganda |
+
+      Dakta-na health programme reaches thousands of listeners |
+
+      Sports-Tuku introduces live football analysis every weekend |
+
+      Tekwaro cultural show continues promoting Acholi heritage and traditions
+
+    </marquee>
+
+  </div>
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h2>Latest News & Updates</h2>
+
+      <p>
+        Bringing Northern Uganda closer through trusted journalism,
+        community voices, culture, sports, and development stories.
+      </p>
+
+    </div>
+
+  </section>
+
+  <div class="container">
+
+    <h2 class="section-title">Latest News</h2>
+
+    <div class="news-grid">
+
+      <!-- NEWS CARD 1 -->
+
+      <div class="news-card">
+
+        <img 
+        src="IMG_2610.JPG.jpeg"
+        alt="Community News">
+
+        <div class="news-content">
+
+          <div class="date">May 27, 2026</div>
+
+          <h3>ENOUGH IS ENOUGH! PRESIDENT MUSEVENI WARNS LAZY LEADERS AS PARLIAMENT ELECTS NEW SPEAKER AND DEPUTY SPEAKER</h3>
+
+          <p>
+            President Yoweri Kaguta Museveni has warned that he is going to be tough on lazy and inactive leaders who don't care about the interests of the people they are supposed to serve.
+          </p>
+
+          <div id="story1" class="full-story">
+
+            <p>
+              
+According to President Museveni, lazy and inactive leaders towards socio-economic initiatives are traitors betraying their country-Uganda.
+“I'm in a position to be very rough with people who want a level of leadership but don't care about the people they lead. I have been talking for a long time, and I would just sound like a preacher. I have already laid a trap for all those people through programs on the ground,” he said.
+The President made the remarks today during the 1st meeting of the 1st session of the 12th Parliament at Kololo Independence Grounds. President Museveni’s proclamation to hold the 1st session was read by the Clerk of Parliament, Mr. Adolf Mwesige.
+President Museveni wondered why some Ugandans remain poor yet the government has invested a lot of capital on ground.
+“I'm in a very bad mood. The capital is there at each parish. Use it. Enough is enough. Every so-called leader must use the government programs to eliminate poverty and create wealth,” he cautioned.
+“I have put money through government programs on the ground. As I speak, in every parish there is Shs 800 million of low-cost capital.”
+President Museveni advised leaders that if indeed they care about the citizens, they should go back to these parishes and ask for accountability for those funds such as the Parish Development Model (PDM).
+“I don't want to hear that there is poverty in homesteads that have land and yet money is there at parish level. If you are a minister and I come to your village and people are still suffering, I will sack you,” he said.
+“I want to inform everybody that I have been monitoring and I don't want to embarrass mature people. The money is there on the ground, let's use it to get our people out of poverty.”
+He further warned leaders against meandering around supporting European Football clubs when their people are living in poverty, saying he will not tolerate that kind of betrayal anymore.
+“One of my people was inviting me for something called Arsenal. I said what's Arsenal? That I should go and celebrate. Celebrate what? I was a footballer myself; I gave up football in 1966 and now I'm on Uganda. Okay you can have your Arsenal, but start with the people please. How can you be celebrating European clubs when your people don't have anything?” he wondered.
+On the issue of Ebola outbreak, President Museveni tasked Ugandans to take precautionary measures to ensure that the disease is prevented.
+“Please set an example. There is big problem in Congo. Let's stop this business of shaking hands and so on. Ebola spreads through physical contact. I was here watching you shaking hands and hugging. Do you people know that there is Ebola? For me I've not touched any of you,” he said.
+During the same meeting, the Speaker and Deputy Speaker of the 12th Parliament were elected.
+For the Speakership position, a total of three candidates were in the race: Jacob Marksons Oboth-Oboth (West Budama Central), the National Resistance Movement (NRM) flag bearer; Paul Mwiru (Jinja East) of the National Unity Platform (NUP), presented as the joint opposition candidate; and Democratic Party (DP) President General Norbert Mao (Laroo- Pece).
+The Chief Justice, His Lordship, Flavian Zeija presided over the election. He cited rules of procedure guiding the election of the speaker of Parliament and tasks the clerk to Parliament to remind MPs of the guidelines and eligibility.
+The outgoing Vice President, H.E Jessica Alupo, also Katakwi District Woman Member of Parliament nominated Hon. Oboth Oboth for the position of Speaker of Parliament.
+H.E Alupo cited candidate Oboth Oboth's distinguished career in legal practice, legislative experience, experience in public service, a patriot and thorough education stance, among other unique attributes that qualify and render him the most suitable candidate for speaker of Parliament.
+After the vote count, Hon. Oboth-Oboth emerged the winner of the race, defeating Mwiru and Mao.
+He garnered 441 votes followed by Mwiru who garnered 60 votes and Mao garnered came last with 15 votes. 
+His Lordship Zeija confirmed the outcome of the election and declared Hon. Oboth-Oboth Speaker- elect of the 12th Parliament.
+Subsequently, the Speaker-elect took an oath before President Museveni and he was handed instruments of power including the Mace, The national flag, Constitution, the rules of procedure of Parliament, and the speaker robes.
+In his address, the new Speaker of Parliament, Rt. Hon. Oboth Oboth committed to enforce prompt accountability interventions for public resources, promised rapid and highly visible changes required of Parliament.
+He pledged to lead a corruption-free Parliament, declaring zero tolerance to misuse of public resources.
+He also called on MPs to observe modesty, dignity and unity in service to regain public trust from the populace.
+Rt. Hon. Oboth Oboth attributed his landslide victory to faithfulness and strategic patience.
+On the other hand, Rt. Hon. Thomas Tayebwa (Ruhinda North) was elected Deputy Speaker of the 12th Parliament after defeating Nyakato Asinansi (Hoima City) and Sarah Aguti (Dokolo District).
+Rt. Hon. Tayebwa garnered 457 votes against Nyakato who garnered 45 votes and Aguti with 14 votes.
+He called on MPs to have a unified cause to foster socio-economic transformation for the populace with focus on wealth creation for all households.
+Rt. Hon. Tayebwa also commended his supporters and mobilizers across all political formations that endorsed him, the NRM Central Executive Committee that approved his candidacy and the Patriotic League of Uganda that endorsed. He promised to contribute towards building a Parliament of national pride.
+Lastly, President Museveni congratulated the newly elected leadership of Parliament and highlighted the transparency witnessed in the election.
+He also commended the opposition political parties for their involvement in the speakership race and rallied MPs to consolidate national gains initiated by the NRM government for further national socio-economic transformation and development.
+            </p>
+
+            <p>
+              Weekly discussions focus on agriculture, education,
+              health awareness, and economic empowerment across
+              Northern Uganda.
+            </p>
+
+          </div>
+
+          <button onclick="toggleStory('story1', this)" class="btn">
+
+            Read More
+
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- NEWS CARD 2 -->
+
+      <div class="news-card">
+
+        <img 
+        src="Pirates players workingout.jpeg"
+        alt="The Stanbic Black Pirates have named a 26-man squad for Saturday">
+
+        <div class="news-content">
+
+          <div class="date">May 28, 2026</div>
+
+          <h3>Stanbic Black Pirates Unveil 26-Man Squad for Historic Enterprise Cup Final</h3>
+
+          <p>
+            KAMPALA: The Stanbic Black Pirates have named a 26-man squad for Saturday’s historic Enterprise Cup final against Kenya’s Kabras Sugar RFC in Nairobi, with the team carrying Uganda’s hopes into East Africa’s biggest club rugby showdown.
+          </p>
+
+          <div id="story2" class="full-story">
+
+            <p>
+              Captain Isaac Massanganzira will lead the traveling side, assisted by vice-captains Frank Kidega, Alex Aturinda, and Conrad Wanyama as the Pirates seek to become the first Ugandan club in the modern era to win the regional title.
+The squad announcement was made during the “Twende Nairobi” sponsors and fans meet-and-greet event hosted by Stanbic Bank Uganda at Sisha Nyama Village in Kampala.
+Stanbic Bank Executive Director Sam Mwogeza described the Pirates’ qualification as a milestone moment for Ugandan sport.
+“For over 50 years, no Ugandan club has reached the finals of the prestigious Enterprise Cup. Today, the Stanbic Black Pirates have rewritten history and reminded all of us what Ugandan sport is capable of when talent, discipline, belief, and partnership come together,” Mwogeza said.
+            </p>
+
+            <p>
+              
+Mwogeza also rallied Ugandans travelling across the region to take advantage of Stanbic Bank’s internationally acclaimed borderless banking solutions, including cards, the Stanbic App, and FlexiPay, which enable customers to stay in control of their finances regardless of geographical location.
+“The ‘Twende Nairobi’ campaign is more than a rugby campaign. It is a movement that connects travel, regional integration, innovation, fan culture, and seamless financial solutions into one shared East African experience,” Mwogeza said, adding that the initiative reflects the bank’s purpose: “Uganda is our home, we drive her growth.”
+Mervin Odongo, the Stanbic Black Pirates Head Coach said the team understands the weight of responsibility heading into the final.
+“This final is bigger than the Pirates badge. We are representing Ugandan rugby and an entire country that believes in what this team has achieved,” Odongo said.
+Vice-captain Frank Kidega said the players are determined to reward fans for their continued support throughout the campaign.
+“We understand what this opportunity means for Ugandan rugby, and the squad is ready to compete and make the country proud,” Kidega said.
+Key to note is that the team leadership has retained a strong core that powered the Pirates’ impressive run to the final, including influential forwards Eliphaz Emong, Sunday Jaguar, Nathan Bwambale, and Samuel Lubwama, who are expected to anchor the battle upfront against the powerful Kenyan champions.
+In the backline, much attention will fall on vice-captain Frank Kidega, playmaker John Paul Atim, Humphrey Tashobya, and dangerous finisher Mubarak Wandera as the Pirates look to unlock Kabras Sugar’s defense.
+The inclusion of experienced campaigners such as Conrad Wanyama, Allan Karuhanga, and Stephen Alul adds depth and leadership to the traveling team, while younger players like Timothy Kisiga and Haruna Muhammad offer energy off the bench.
+
+Stanbic Black Pirates Traveling Squad
+1.Alema Ruhweza 
+2.Ivan Kabagambe 
+3.Ariho Muhumuza 
+4.Umar Duff 
+5.Samuel Lubwama 
+6.Nathan Bwambale 
+7.Sunday Jaguar 
+8.Eliphaz Emong 
+9.Frank Kidega (VC) 
+10.John Paul Atim 
+11.Moses Zziwa 
+12.Sydney Gongodyo 
+13.Humphrey Tashobya 
+14.Alex Aturinda (VC) 
+15.Mubarak Wandera 
+16.Conrad Wanyama (VC) 
+17.Stephen Alul 
+18.William Nkore 
+19.Eric Mula 
+20.Davis Shimwa 
+21.Allan Karuhanga 
+22.Jeremiah Okello 
+23.Pius Ojeabulu 
+24.Timothy Kisiga 
+25.Haruna Muhammad 
+26.Isaac Massanganzira (Captain) 
+The Pirates will depart Kampala on Wednesday ahead of the final scheduled for Saturday, May 30, in Nairobi.
+            </p>
+
+          </div>
+
+          <button onclick="toggleStory('story2', this)" class="btn">
+
+            Read More
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+	
+  <!-- PROGRAMME HIGHLIGHTS SECTION -->
+
+  <section class="container">
+
+    <h2 class="section-title">Programme Highlights — 2025/2026</h2>
+
+    <div class="news-grid">
+
+      <div class="news-card">
+
+        <div class="news-content">
+
+          <h3>🌅 Morning Shows</h3>
+
+          <p>🕕 The Early Bird Show — 06:00–10:00</p>
+
+          <p>🕙 It’s Possible Show — 10:00–12:00</p>
+
+        </div>
+
+      </div>
+
+      <div class="news-card">
+
+        <div class="news-content">
+
+          <h3>🎧 Afternoon & Evening</h3>
+
+          <p>🕑 Afternoon Delight — 14:00–17:00</p>
+
+          <p>🕔 Meeting Point — 17:00–21:00</p>
+
+        </div>
+
+      </div>
+
+      <div class="news-card">
+
+        <div class="news-content">
+
+          <h3>📰 News & Debate</h3>
+
+          <p>Mewu Kono</p>
+
+          <p>Leyo Tam / Nywako Tam</p>
+
+        </div>
+
+      </div>
+
+      <div class="news-card">
+
+        <div class="news-content">
+
+          <h3>⚽ Sports — Tuku</h3>
+
+          <p>Multiple sports discussion slots weekly.</p>
+
+        </div>
+
+      </div>
+
+      <div class="news-card">
+
+        <div class="news-content">
+
+          <h3>🎭 Arts & Culture</h3>
+
+          <p>Coko Paco & Mung Pa Acholi</p>
+
+          <p>Tekwaro & Wer Kwaro</p>
+
+        </div>
+
+      </div>
+
+      <div class="news-card">
+
+        <div class="news-content">
+
+          <h3>📚 Education & Health</h3>
+
+          <p>Ngec Ki Dongo Lobo</p>
+
+          <p>Dakta-na</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+
+    <p>© 2026 ABS FM — All Rights Reserved</p>
+
+    <p>Empowering the Community</p>
+
+  </footer>
+
+  <!-- RADIO PLAYER -->
+
+  <div class="radio-player">
+
+    <button onclick="playRadio()" class="live-btn">
+      🔴 ON AIR
+    </button>
+
+    <button onclick="stopRadio()" class="stop-btn">
+      ⏹ OFF
+    </button>
+
+    <audio id="radioStream">
+      <source src="https://s12.myradiostream.com/19198/listen.mp3" type="audio/mpeg">
+    </audio>
+
+  </div>
+	<div id="digital-clock"></div>
+
+<style>
+
+#digital-clock{
+  position:fixed;
+  top:20px;
+  right:20px;
+  background:#111;
+  color:#ff7b00;
+  padding:12px 20px;
+  border-radius:12px;
+  font-size:22px;
+  font-weight:bold;
+  box-shadow:0 4px 12px rgba(0,0,0,0.3);
+  z-index:9999;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+</style>
+
+  <script>
+
+    const radio = document.getElementById("radioStream");
+
+    function playRadio(){
+      radio.play();
+    }
+
+    function stopRadio(){
+      radio.pause();
+      radio.currentTime = 0;
+    }
+
+    function toggleStory(id, button){
+
+      const story = document.getElementById(id);
+
+      if(story.style.display === "block"){
+
+        story.style.display = "none";
+        button.innerHTML = "Read More";
+
+      }else{
+
+        story.style.display = "block";
+        button.innerHTML = "Show Less";
+
+      }
+
+    }
+
+  </script>
+<script>
+
+function updateClock(){
+
+  const now = new Date();
+
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  let seconds = now.getSeconds();
+
+  hours = hours < 10 ? "0" + hours : hours;
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+  seconds = seconds < 10 ? "0" + seconds : seconds;
+
+  const time = hours + ":" + minutes + ":" + seconds;
+
+  document.getElementById("digital-clock").innerHTML = time;
+
+}
+
+setInterval(updateClock, 1000);
+
+updateClock();
+
+</script>
+
+</body>
+</html>
